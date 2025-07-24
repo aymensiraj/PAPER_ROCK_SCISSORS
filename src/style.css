@@ -1,0 +1,23 @@
+@import "tailwindcss";
+#img1{
+    animation: rotate-once 1s 0.2s linear forwards;
+}
+#img2{
+    animation: rotate-once2 1s 0.2s linear forwards;
+}
+@keyframes rotate-once {
+    from{
+        transform: rotate(0deg);
+        }
+    to{
+        transform: rotate(90deg);
+    }
+}
+@keyframes rotate-once2 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-90deg);
+    }
+}
