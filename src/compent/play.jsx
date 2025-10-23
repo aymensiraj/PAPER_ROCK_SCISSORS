@@ -99,25 +99,70 @@ useEffect(() => {
 
 }, [player, computer]);
     
-  return (
-    
-        <div>
-            <h1 className="text-center mt-5 text-5xl font-mono font-bold">PAPER SCISSORS ROCK</h1>
-            <div className="flex gap-10 justify-center relative left-[40%]  w-[20%] ">
-                <img id="img1" className="rotate-45" width={300} src={playerIMG} alt="IMG" /><br /><br />
-                <img id="img2" className="scale-x-[-1] scale-y-[-1] rotate-[150deg]" width={300} src={computerIMG} alt="IMG" />
-            </div>
+return (
+  <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      <h1 className="text-center mt-6 text-4xl sm:text-4xl md:text-6xl font-extrabold font-mono tracking-widest">
+        PAPER · SCISSORS · ROCK
+      </h1>
+  <div/>
 
-            <h1 className="w-[50%]  absolute left-[25%] top-[70%] text-5xl font-bold font-mono text-center">{text}</h1>
-            <Link className="bg-green-500 hover:bg-green-600 rounded px-4 py-2 absolute top-[80%] left-5/12 ml-13 text-3xl font-bold font-mono" to="/" onClick={handleGame}>Play Again</Link>
-            <div className="flex gap-16 justify-center text-5xl font-mono font-bold absolute top-[89%] left-[20%]  ">
-                <p>WIN : {win}</p>
-                <p>|</p>
-                <p>DRAW : {draw}</p>
-                <p>|</p>
-                <p>LOSS : {loss}</p>
-            </div>
-        </div>
+  <div className="flex flex-col sm:flex-row gap-10 justify-center items-center w-full sm:w-[80%] md:w-[60%]">
+    <div className="flex flex-col items-center">
+      <img
+        id="img1"
+        className="rotate-45 w-[180px] sm:w-[220px] md:w-[300px] drop-shadow-[0_0_25px_rgba(34,197,94,0.5)] transition-transform duration-500 "
+        src={playerIMG}
+        alt="Player"
+      />
+      <p className="mt-4 text-lg sm:text-xl text-green-400 font-semibold">You</p>
+    </div>
+
+    <div className="flex flex-col items-center">
+      <img
+        id="img2"
+        className="scale-x-[-1] scale-y-[-1] rotate-[150deg] w-[180px] sm:w-[220px] md:w-[300px] drop-shadow-[0_0_25px_rgba(239,68,68,0.5)]  transition-transform duration-500"
+        src={computerIMG}
+        alt="Computer"
+      />
+      <p className="mt-4 text-lg sm:text-xl text-red-400 font-semibold">Computer</p>
+    </div>
+
+  </div>
+
+  <h2 className="mt-12 text-3xl sm:text-4xl md:text-5xl font-mono font-bold text-center tracking-wide">
+    {text}
+  </h2>
+
+  
+  <Link
+    to="/"
+    onClick={handleGame}
+    className="mt-10 bg-green-500 hover:bg-green-600 transition-colors duration-300 rounded-xl px-6 py-3 text-2xl font-bold font-mono shadow-lg shadow-green-600/30">Play Again
+  </Link>
+
+  
+  <div className="mt-12 flex flex-wrap justify-center gap-6 sm:gap-10 text-2xl sm:text-3xl font-mono font-bold">
+
+    <div className="flex items-center gap-2">
+      <span className="text-green-400">WIN</span> : <span>{win}</span>
+    </div>
+
+    <div>|</div>
+
+    <div className="flex items-center gap-2">
+      <span className="text-yellow-400">DRAW</span> : <span>{draw}</span>
+    </div>
+
+    <div>|</div>
+    
+    <div className="flex items-center gap-2">
+      <span className="text-red-400">LOSS</span> : <span>{loss}</span>
+    </div>
+
+  </div>
+</div>
+
+
   
   );
     
